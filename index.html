@@ -10,19 +10,43 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Spline Sans"
     />
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="script.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Siddharth</title>
   </head>
   <body>
     <div class="intro">
-      <span class="greeting">Hi, I am Siddharth</span>
-      <span class="title">Full-Stack Developer</span>
+      <span class="greeting"><span id="typed-element" ></span></span>
+      <span class="title"><span id="typed-element2"></span></span>
       <div class="navigation">
         <a onclick="scrollFunction('skill')">Skills</a>
         <a onclick="scrollFunction('project')">Projects</a>
         <a href="mailto:siddharthnema2308@gmail.com">Contact</a>
       </div>
+      <script>
+        var typed = new Typed('#typed-element', {
+          strings: ['Hi, I am Siddharth'],
+          typeSpeed: 75,
+          cursorChar: '_',
+          onComplete: (self) => {
+              document.getElementsByClassName('typed-cursor')[0].style.visibility='hidden';
+            
+
+          },
+        });
+
+        setTimeout(() => {
+          var typed2 = new Typed('#typed-element2', {
+          strings: ['Frontend Developer', 'Backend Developer', 'App Developer' ],
+          typeSpeed: 75,
+          loop: true,
+          backSpeed: 75,
+          cursorChar: '_',
+        });
+        }, 2500);
+        
+      </script>
     </div>
     <div class="desc">
       <img
